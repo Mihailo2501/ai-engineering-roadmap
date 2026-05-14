@@ -1,8 +1,19 @@
-import { useState } from "react";
+import { lazy, Suspense, useState } from "react";
 import { CartographerMap } from "./components/cartographer-map";
-import { ScribesTentModal } from "./components/scribes-tent-modal";
-import { VoyageLogDrawer } from "./components/voyage-log";
-import { CinematicPlayer } from "./components/cinematic-player";
+
+const ScribesTentModal = lazy(() =>
+  import("./components/scribes-tent-modal").then((m) => ({
+    default: m.ScribesTentModal,
+  }))
+);
+const VoyageLogDrawer = lazy(() =>
+  import("./components/voyage-log").then((m) => ({ default: m.VoyageLogDrawer }))
+);
+const CinematicPlayer = lazy(() =>
+  import("./components/cinematic-player").then((m) => ({
+    default: m.CinematicPlayer,
+  }))
+);
 
 export default function App() {
   const [scribesOpen, setScribesOpen] = useState(false);
@@ -14,15 +25,21 @@ export default function App() {
         onOpenScribesTent={() => setScribesOpen(true)}
         onOpenVoyageLog={() => setVoyageOpen(true)}
       />
-      <ScribesTentModal
-        open={scribesOpen}
-        onClose={() => setScribesOpen(false)}
-      />
-      <VoyageLogDrawer
-        open={voyageOpen}
-        onClose={() => setVoyageOpen(false)}
-      />
-      <CinematicPlayer />
+      <Suspense fallback={null}>
+        <ScribesTentModal
+          open={scribesOpen}
+          onClose={() => setScribesOpen(false)}
+        />
+      </Suspense>
+      <Suspense fallback={null}>
+        <VoyageLogDrawer
+          open={voyageOpen}
+          onClose={() => setVoyageOpen(false)}
+        />
+      </Suspense>
+      <Suspense fallback={null}>
+        <CinematicPlayer />
+      </Suspense>
     </div>
   );
 }

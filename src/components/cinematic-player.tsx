@@ -142,7 +142,7 @@ export function CinematicPlayer() {
         >
           <button
             type="button"
-            aria-label="Close cinematic"
+            aria-label="Skip cinematic and return to the map"
             onClick={dismiss}
             className="absolute top-6 right-6 font-display text-xs tracking-[0.4em] uppercase text-parchment hover:text-gold-bright transition-colors"
           >

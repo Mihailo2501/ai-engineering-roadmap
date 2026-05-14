@@ -15,6 +15,20 @@ const context = await browser.newContext({
   viewport: { width: 1920, height: 1080 },
   deviceScaleFactor: 1.5,
 });
+await context.addInitScript(() => {
+  try {
+    window.localStorage.setItem(
+      "aer:progress:v1",
+      JSON.stringify({
+        checked: {},
+        audio: false,
+        cinematicsPlayed: { intro: Date.now() },
+        introSeen: true,
+        voyageLogOpen: false,
+      })
+    );
+  } catch {}
+});
 const errors = [];
 context.on("weberror", (e) => errors.push("weberror: " + e.error().message));
 const page = await context.newPage();

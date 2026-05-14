@@ -53,17 +53,20 @@ export function FogOfWar({ phases, isUnlocked }: Props) {
                 filter="url(#fogBlur)"
               />
               {!reduced && (
-                <motion.ellipse
-                  cx={r.cx}
-                  cy={r.cy - 20}
-                  rx={w / 2.4}
-                  ry={h / 3}
-                  fill="#f4ead3"
-                  fillOpacity="0.55"
-                  filter="url(#fogBlur)"
-                  animate={{ cx: [r.cx - 20, r.cx + 20, r.cx - 20] }}
+                <motion.g
+                  animate={{ x: [-20, 20, -20] }}
                   transition={{ duration: 14, repeat: Infinity, ease: "easeInOut" }}
-                />
+                >
+                  <ellipse
+                    cx={r.cx}
+                    cy={r.cy - 20}
+                    rx={w / 2.4}
+                    ry={h / 3}
+                    fill="#f4ead3"
+                    fillOpacity="0.55"
+                    filter="url(#fogBlur)"
+                  />
+                </motion.g>
               )}
               <text
                 x={r.cx}

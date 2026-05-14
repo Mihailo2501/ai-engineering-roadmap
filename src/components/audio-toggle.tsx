@@ -28,7 +28,7 @@ export function AudioToggle() {
     <button
       type="button"
       aria-pressed={on}
-      aria-label={on ? "Mute audio" : "Enable audio"}
+      aria-label={on ? "Audio on. Tap to mute." : "Audio off. Tap to enable."}
       onClick={toggle}
       className="bg-parchment/85 backdrop-blur-sm border border-ink/30 rounded-sm px-3 py-2 flex items-center gap-2 text-ink hover:bg-gold-pale transition-colors shadow-md"
     >

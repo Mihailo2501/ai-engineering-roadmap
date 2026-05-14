@@ -1,14 +1,30 @@
-import { StrictMode } from "react";
+import { StrictMode, lazy, Suspense } from "react";
 import { createRoot } from "react-dom/client";
 import { RouterProvider, createHashRouter } from "react-router-dom";
 import { MDXProvider } from "@mdx-js/react";
 import App from "./App";
-import DemoPage from "./routes/demo";
 import "./styles/index.css";
+
+const DemoPage = lazy(() => import("./routes/demo"));
+
+function Fallback() {
+  return (
+    <main className="min-h-screen flex items-center justify-center font-display text-ink-soft text-sm tracking-[0.4em] uppercase">
+      charting...
+    </main>
+  );
+}
 
 const router = createHashRouter([
   { path: "/", element: <App /> },
-  { path: "/demo", element: <DemoPage /> },
+  {
+    path: "/demo",
+    element: (
+      <Suspense fallback={<Fallback />}>
+        <DemoPage />
+      </Suspense>
+    ),
+  },
 ]);
 
 const mdxComponents = {};
