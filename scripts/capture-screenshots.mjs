@@ -11,24 +11,27 @@ mkdirSync(out, { recursive: true });
 
 const URL_HASH = process.env.AER_URL ?? "http://localhost:4173/";
 
+const checkedIds = [
+  "p0-m01-05", "p0-m06-10", "p0-m11-15", "p0-m16-20", "p0-m21-25",
+  "p1-bea", "p1-12factor", "p1-patterns", "p1-swebench", "p1-gaia", "p1-taubench", "p1-agentbench", "p1-browsecomp",
+  "p2-mcp", "p2-cc-101", "p2-cc-in-action", "p2-agent-sdk", "p2-claude-p", "p2-cc-actions",
+  "p3-hf-full", "p3-hf-bonus", "p3-stagehand",
+];
+const checked = {};
+let t = Date.now() - 86400000 * 30;
+for (const id of checkedIds) {
+  checked[id] = { at: t };
+  t += 86400000;
+}
+
 const sampleProgress = {
-  checked: {
-    "p0-m01-05": { at: Date.now() - 86400000 * 12 },
-    "p0-m06-10": { at: Date.now() - 86400000 * 11 },
-    "p0-m11-15": { at: Date.now() - 86400000 * 10 },
-    "p0-m16-20": { at: Date.now() - 86400000 * 9 },
-    "p0-m21-25": { at: Date.now() - 86400000 * 8 },
-    "p1-bea": { at: Date.now() - 86400000 * 7 },
-    "p1-12factor": { at: Date.now() - 86400000 * 6 },
-    "p1-patterns": { at: Date.now() - 86400000 * 5 },
-    "p1-swebench": { at: Date.now() - 86400000 * 4 },
-    "p1-gaia": { at: Date.now() - 86400000 * 3 },
-    "p1-taubench": { at: Date.now() - 86400000 * 2 },
-    "p2-mcp": { at: Date.now() - 86400000 * 1.5 },
-    "p2-cc-101": { at: Date.now() - 86400000 },
-  },
+  checked,
   audio: false,
-  cinematicsPlayed: { intro: Date.now() },
+  cinematicsPlayed: {
+    intro: Date.now(),
+    "phase-0": Date.now(),
+    "phase-1": Date.now(),
+  },
   introSeen: true,
   voyageLogOpen: false,
 };
