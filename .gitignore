@@ -20,3 +20,6 @@ coverage
 out
 *.tsbuildinfo
 .remotion
+lighthouse.json
+lighthouse-*.json
+.lighthouseci
