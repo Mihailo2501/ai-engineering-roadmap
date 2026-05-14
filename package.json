@@ -1,0 +1,42 @@
+{
+  "name": "ai-engineering-roadmap",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "preview": "vite preview --host",
+    "lint": "tsc -b --noEmit",
+    "remotion": "remotion studio src/remotion/index.tsx",
+    "render:intro": "remotion render src/remotion/index.tsx IntroReel public/cinematics/intro-reel.mp4 --concurrency=2 --log=warn --crf=26 --pixel-format=yuv420p",
+    "render:phase": "node scripts/render-phase-cinematics.mjs",
+    "render:capstone": "remotion render src/remotion/index.tsx CapstoneReveal public/cinematics/capstone-reveal.mp4 --concurrency=2 --log=warn --crf=26 --pixel-format=yuv420p",
+    "render:all": "npm run render:intro && npm run render:phase && npm run render:capstone"
+  },
+  "dependencies": {
+    "framer-motion": "^12.4.0",
+    "html-to-image": "^1.11.13",
+    "jspdf": "^2.5.2",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-router-dom": "^7.1.1"
+  },
+  "devDependencies": {
+    "@mdx-js/react": "^3.1.0",
+    "@mdx-js/rollup": "^3.1.0",
+    "@remotion/bundler": "^4.0.250",
+    "@remotion/cli": "^4.0.250",
+    "@remotion/renderer": "^4.0.250",
+    "@tailwindcss/vite": "^4.0.0",
+    "@types/mdx": "^2.0.13",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "@vitejs/plugin-react": "^4.3.4",
+    "playwright": "^1.60.0",
+    "remotion": "^4.0.250",
+    "tailwindcss": "^4.0.0",
+    "typescript": "^5.7.2",
+    "vite": "^6.0.7"
+  }
+}

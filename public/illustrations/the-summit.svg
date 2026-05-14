@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 240" width="300" height="240">
+  <defs>
+    <pattern id="sm-hatch" x="0" y="0" width="3" height="3" patternUnits="userSpaceOnUse">
+      <line x1="0" y1="3" x2="3" y2="0" stroke="#1c1610" stroke-width="0.3" opacity="0.55"/>
+    </pattern>
+    <pattern id="sm-snow" x="0" y="0" width="6" height="6" patternUnits="userSpaceOnUse">
+      <circle cx="3" cy="3" r="0.4" fill="#f4ead3" stroke="none"/>
+    </pattern>
+    <radialGradient id="sm-aura" cx="50%" cy="20%" r="55%">
+      <stop offset="0%" stop-color="#ecc25a" stop-opacity="0.55"/>
+      <stop offset="100%" stop-color="#ecc25a" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <g stroke="#1c1610" stroke-linecap="round" stroke-linejoin="round" fill="none">
+    <circle cx="150" cy="60" r="60" fill="url(#sm-aura)" stroke="none"/>
+
+    <g>
+      <path d="M-20 230 L40 180 L80 220 L120 150 L150 30 L180 130 L220 200 L260 170 L320 230 Z" fill="#f4ead3" stroke-width="1.5"/>
+      <path d="M120 150 L150 30 L180 130" fill="#f4ead3" stroke-width="1.5"/>
+      <path d="M120 150 L150 110 L180 130" fill="#fefaef" stroke-width="0.9"/>
+      <path d="M150 30 L150 110" stroke-width="0.7" opacity="0.6"/>
+
+      <path d="M120 150 L80 220" stroke-width="0.7" opacity="0.6"/>
+      <path d="M180 130 L220 200" stroke-width="0.7" opacity="0.6"/>
+      <path d="M40 180 L80 220 L120 150" stroke-width="0.7" opacity="0.5"/>
+      <path d="M220 200 L260 170 L320 230" stroke-width="0.7" opacity="0.5"/>
+
+      <path d="M-20 220 L40 180 L80 220 L120 150 L150 30 L180 130 L220 200 L260 170 L320 230" fill="none" stroke-width="0" />
+      <path d="M-20 226 L40 200 L80 220 L120 180 L180 200 L220 218 L260 200 L320 230" stroke-width="0.5" opacity="0.4"/>
+
+      <rect x="40" y="184" width="80" height="50" fill="url(#sm-hatch)" stroke="none" opacity="0.5"/>
+      <rect x="180" y="138" width="80" height="60" fill="url(#sm-hatch)" stroke="none" opacity="0.45"/>
+    </g>
+
+    <g transform="translate(150, 30)">
+      <line x1="0" y1="0" x2="0" y2="-32" stroke-width="1.4"/>
+      <path d="M0 -30 L18 -24 L0 -18 Z" fill="#a73a26" stroke="#1c1610" stroke-width="1"/>
+      <circle cx="0" cy="0" r="3" fill="#ecc25a" stroke="#1c1610" stroke-width="0.9"/>
+    </g>
+
+    <g transform="translate(78, 224)" opacity="0.8">
+      <circle cx="0" cy="-3" r="2.6" fill="#1c1610" stroke="none"/>
+      <path d="M-2 0 L-2 6 L2 6 L2 0 Z" fill="#1c1610" stroke="none"/>
+      <path d="M-4 8 L-4 14 L0 16 L4 14 L4 8" stroke-width="0.7"/>
+      <path d="M-6 0 L-12 -8" stroke-width="0.6"/>
+      <circle cx="-12" cy="-8" r="1.5" fill="#1c1610" stroke="none"/>
+      <text x="0" y="22" text-anchor="middle" font-family="Source Serif 4, serif" font-size="5" fill="#1c1610" stroke="none" font-style="italic">climber</text>
+    </g>
+
+    <g transform="translate(132, 180)" opacity="0.8" stroke-dasharray="2 2">
+      <path d="M0 0 L18 -28" stroke-width="0.6"/>
+      <path d="M18 -28 L12 -38" stroke-width="0.6"/>
+      <path d="M12 -38 L18 -50" stroke-width="0.6"/>
+    </g>
+
+    <g stroke-width="0.9" fill="#1c1610">
+      <g transform="translate(50, 40)">
+        <path d="M0 0 L2 4 L6 0 L2 -4 Z" fill="#1c1610"/>
+      </g>
+      <g transform="translate(260, 50)">
+        <path d="M0 0 L2 4 L6 0 L2 -4 Z" fill="#1c1610"/>
+      </g>
+      <g transform="translate(20, 100)">
+        <circle r="0.8" fill="#1c1610"/>
+      </g>
+      <g transform="translate(280, 90)">
+        <circle r="0.6" fill="#1c1610"/>
+      </g>
+    </g>
+
+    <g transform="translate(150, 8)" opacity="0.7">
+      <text text-anchor="middle" font-family="Cinzel, serif" font-size="6" letter-spacing="4" fill="#1c1610" stroke="none">SUMMIT</text>
+    </g>
+  </g>
+</svg>
