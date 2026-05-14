@@ -33,7 +33,30 @@
     <title>AI Engineering Roadmap</title>
   </head>
   <body class="bg-parchment">
-    <div id="root"></div>
+    <div id="root">
+      <main class="aer-skeleton">
+        <div class="aer-skeleton-inner">
+          <p class="aer-skeleton-eyebrow">A cartographer&apos;s chart</p>
+          <h1 class="aer-skeleton-title">AI Engineering Roadmap</h1>
+          <p class="aer-skeleton-sub">six phases &middot; one summit &middot; setting sail</p>
+          <svg viewBox="0 0 80 80" width="56" height="56" class="aer-skeleton-compass" aria-hidden="true">
+            <circle cx="40" cy="40" r="36" fill="#e7d6ad" stroke="#1c1610" stroke-width="1.4"/>
+            <polygon points="40,12 46,40 40,68 34,40" fill="#a73a26" stroke="#1c1610" stroke-width="0.6"/>
+            <circle cx="40" cy="40" r="3" fill="#1c1610"/>
+          </svg>
+        </div>
+      </main>
+      <style>
+        .aer-skeleton{min-height:100dvh;display:flex;align-items:center;justify-content:center;font-family:Cinzel,"Trajan Pro","Cormorant Garamond",serif;color:#1c1610;background:#f4ead3;padding:32px;}
+        .aer-skeleton-inner{display:flex;flex-direction:column;align-items:center;text-align:center;max-width:680px;}
+        .aer-skeleton-eyebrow{font-size:13px;letter-spacing:0.4em;text-transform:uppercase;color:#a73a26;margin:0 0 18px 0;}
+        .aer-skeleton-title{font-size:clamp(36px,7vw,84px);line-height:1;letter-spacing:0.04em;margin:0 0 18px 0;font-weight:500;}
+        .aer-skeleton-sub{font-family:"Source Serif 4","Lora",Georgia,serif;font-style:italic;font-size:18px;color:#3a2f24;margin:0 0 36px 0;}
+        .aer-skeleton-compass{animation:aer-spin 8s linear infinite;}
+        @keyframes aer-spin{from{transform:rotate(0)}to{transform:rotate(360deg)}}
+        @media (prefers-reduced-motion:reduce){.aer-skeleton-compass{animation:none;}}
+      </style>
+    </div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
