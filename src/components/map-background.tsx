@@ -86,7 +86,7 @@ export function MapBackground({ className }: Props) {
 
       <g opacity="0.55">
         <path
-          d="M -40 1040 Q 200 980 380 1010 T 720 940 T 1100 1000 Q 1280 1040 1340 1000 T 1640 940 T 1980 1000 T 2400 920 T ${MAP_WIDTH + 40} 980"
+          d={`M -40 1040 Q 200 980 380 1010 T 720 940 T 1100 1000 Q 1280 1040 1340 1000 T 1640 940 T 1980 1000 T 2400 920 T ${MAP_WIDTH + 40} 980`}
           fill="url(#landGrad)"
           stroke="#1c1610"
           strokeWidth="1"
