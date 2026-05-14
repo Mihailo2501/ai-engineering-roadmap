@@ -18,21 +18,25 @@ deploys."
 
 ## What this is
 
-A single-page cards UI. A header shows the title and a progress bar with the
-overall count of resources completed. Below it, seven sections render in
-order, each with the phase number, region name, blurb, and a per-phase count
-of how many resources are done. Each resource is a card with title, source,
-time estimate, an external link button, and a checkbox. The grid is one
-column on mobile, two on tablet, three on desktop.
+Three pages, served as one bundle, navigated via hash routes:
+
+- **Roadmap** (`#/`): the tracker. A progress bar with the overall count
+  followed by seven phase sections of resource cards. Each card has title,
+  source, time estimate, an external link button, and a checkbox.
+- **Glossary** (`#/glossary`): alphabetized definitions for the unusual
+  terms surfaced across the roadmap, with a phase badge per term.
+- **Study workflow** (`#/study`): where the actual note-taking happens
+  (a separate scratchpad project), how to name Claude Code sessions, and
+  why progress and notes are deliberately separate concerns.
 
 No backend. Progress is keyed in localStorage as `aer:progress:v1`. Clear the
 key in DevTools to reset the tracker.
 
 ## Screenshots
 
-| Fresh start | Mid progress | Mobile |
+| Roadmap | Glossary | Study workflow |
 |---|---|---|
-| ![Fresh empty tracker](./public/screenshots/home-fresh.png) | ![Tracker with 10 of 49 resources checked](./public/screenshots/home-progress.png) | ![Mobile single-column layout](./public/screenshots/mobile.png) |
+| ![Tracker with 10 of 49 resources checked](./public/screenshots/home-progress.png) | ![Glossary page with phase badges](./public/screenshots/glossary.png) | ![Study workflow page describing the Project 15 setup](./public/screenshots/study-workflow.png) |
 
 ## The seven phases
 

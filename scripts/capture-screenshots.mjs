@@ -60,6 +60,9 @@ async function capture(name, opts) {
   console.log(`  -> screenshots/${name}.png`);
 }
 
+const URL_GLOSSARY = URL_HASH + "#/glossary";
+const URL_STUDY = URL_HASH + "#/study";
+
 await capture("home-fresh", {
   width: 1440,
   height: 960,
@@ -83,6 +86,46 @@ await capture("mobile", {
   width: 414,
   height: 896,
   scale: 2,
+  progress: partialProgress,
+});
+
+async function captureUrl(name, url, opts) {
+  console.log(`capturing ${name}...`);
+  const browser = await chromium.launch();
+  const context = await browser.newContext({
+    viewport: { width: opts.width, height: opts.height },
+    deviceScaleFactor: opts.scale ?? 2,
+    reducedMotion: "reduce",
+  });
+  await context.addInitScript((data) => {
+    try {
+      window.localStorage.setItem("aer:progress:v1", JSON.stringify(data));
+    } catch (err) {
+      console.warn("[seed] localStorage failed", err);
+    }
+  }, opts.progress ?? emptyProgress);
+  const page = await context.newPage();
+  await page.goto(url, { waitUntil: "networkidle" });
+  await page.waitForSelector("h1");
+  await page.waitForTimeout(opts.wait ?? 600);
+  await page.screenshot({
+    path: path.join(out, `${name}.png`),
+    fullPage: !!opts.fullPage,
+    type: "png",
+  });
+  await browser.close();
+  console.log(`  -> screenshots/${name}.png`);
+}
+
+await captureUrl("glossary", URL_GLOSSARY, {
+  width: 1440,
+  height: 960,
+  progress: partialProgress,
+});
+
+await captureUrl("study-workflow", URL_STUDY, {
+  width: 1440,
+  height: 960,
   progress: partialProgress,
 });
 
