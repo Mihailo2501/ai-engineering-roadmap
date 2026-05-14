@@ -38,18 +38,22 @@
     background-image:
       radial-gradient(
         ellipse at top left,
-        rgba(232, 220, 184, 0.55),
+        rgba(232, 220, 184, 0.6),
         transparent 60%
       ),
       radial-gradient(
         ellipse at bottom right,
-        rgba(201, 180, 137, 0.4),
+        rgba(201, 180, 137, 0.45),
         transparent 65%
       ),
-      url("/parchment-texture.svg");
-    background-attachment: fixed, fixed, fixed;
-    background-size: auto, auto, 540px 540px;
-    background-repeat: no-repeat, no-repeat, repeat;
+      radial-gradient(
+        circle at 30% 50%,
+        rgba(110, 91, 70, 0.06),
+        transparent 70%
+      );
+    background-attachment: fixed;
+    background-size: auto, auto, auto;
+    background-repeat: no-repeat;
   }
 
   h1,
