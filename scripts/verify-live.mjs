@@ -12,20 +12,14 @@ const URL = process.env.AER_URL ?? "https://mihailo2501.github.io/ai-engineering
 
 const browser = await chromium.launch();
 const context = await browser.newContext({
-  viewport: { width: 1920, height: 1080 },
+  viewport: { width: 1440, height: 960 },
   deviceScaleFactor: 1.5,
 });
 await context.addInitScript(() => {
   try {
     window.localStorage.setItem(
       "aer:progress:v1",
-      JSON.stringify({
-        checked: {},
-        audio: false,
-        cinematicsPlayed: { intro: Date.now() },
-        introSeen: true,
-        voyageLogOpen: false,
-      })
+      JSON.stringify({ checked: {} })
     );
   } catch {}
 });
@@ -39,7 +33,12 @@ page.on("console", (msg) => {
 console.log("loading", URL);
 const response = await page.goto(URL, { waitUntil: "networkidle", timeout: 30000 });
 console.log("status:", response?.status());
-await page.waitForTimeout(2500);
+await page.waitForSelector("h1");
+const title = await page.locator("h1").first().innerText();
+console.log("title:", title);
+const sections = await page.locator("section").count();
+const cards = await page.locator("article").count();
+console.log("sections:", sections, "cards:", cards);
 await page.screenshot({
   path: path.join(out, "live-home.png"),
   type: "png",

@@ -20,5 +20,5 @@
     "esModuleInterop": true,
     "types": ["vite/client"]
   },
-  "include": ["src", "src/**/*.mdx"]
+  "include": ["src"]
 }
