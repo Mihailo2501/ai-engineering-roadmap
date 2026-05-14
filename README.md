@@ -14,7 +14,7 @@ deploys."
 
 ## Live
 
-> The deploy URL lands here after the first GitHub Pages build completes.
+[https://mihailo2501.github.io/ai-engineering-roadmap/](https://mihailo2501.github.io/ai-engineering-roadmap/)
 
 ## What this is
 
