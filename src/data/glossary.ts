@@ -16,6 +16,11 @@ export const glossary: GlossaryEntry[] = [
     def: "Multi-domain agent benchmark covering operating systems, databases, web, coding, and household environments. Useful for cross-task field literacy.",
   },
   {
+    term: "Anthropic Academy",
+    phase: 2,
+    def: "Anthropic's official training platform on Skilljar. Hosts Claude Code 101, Claude Code in Action, and other short courses with video, quizzes, and completion certificates. Free with a Pro/Max plan or API key.",
+  },
+  {
     term: "Batch API",
     phase: 6,
     def: "Anthropic endpoint for submitting many Claude requests at once at a discounted rate, with results delivered asynchronously.",

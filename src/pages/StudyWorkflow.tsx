@@ -34,7 +34,7 @@ export function StudyWorkflowPage() {
               <Tile
                 label="Project 15"
                 title="Study scratchpad"
-                sub="Notes. One markdown file per resource. Lives on your machine."
+                sub="Notes. One folder per resource. Lives on your machine."
               />
             </div>
           </section>
@@ -44,17 +44,18 @@ export function StudyWorkflowPage() {
               Where to open Claude Code sessions
             </h2>
             <p className="mt-3 text-base leading-relaxed text-slate-700">
-              Always open Claude Code from inside the Project 15 directory, not
-              this one. Project 14 is the artifact; Project 15 is the
-              workspace.
+              Always open Claude Code inside Project 15, not Project 14.
+              Project 14 is the tracker; Project 15 is the workspace. The
+              typical entrypoint is the phase folder for whatever you are
+              working on:
             </p>
             <pre className="mt-4 overflow-x-auto rounded-lg bg-slate-900 px-4 py-3 text-sm text-slate-100">
-              <code>cd "Projects/Project 15 - AI Engineering Study/"{"\n"}claude</code>
+              <code>cd "Projects/Project 15 - AI Engineering Study/notes/phase-2-mcp/"{"\n"}claude</code>
             </pre>
             <p className="mt-3 text-base leading-relaxed text-slate-700">
-              That way every session has the study notes as its working
-              directory and Claude can read, edit, and create markdown files
-              alongside whatever code experiment you are running.
+              That way the session has the phase as its working directory and
+              every resource subfolder is one
+              <code className="rounded bg-slate-100 px-1.5 py-0.5 text-[0.9em] text-slate-800"> cd</code> away.
             </p>
           </section>
 
