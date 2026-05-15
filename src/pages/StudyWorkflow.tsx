@@ -99,29 +99,42 @@ export function StudyWorkflowPage() {
               Where notes go inside Project 15
             </h2>
             <p className="mt-3 text-base leading-relaxed text-slate-700">
-              One markdown file per resource, placed in a phase folder that
-              mirrors the roadmap section.
+              One folder per resource, sitting inside a phase folder that
+              mirrors the roadmap section. The canonical note file inside is
+              <code className="rounded bg-slate-100 px-1.5 py-0.5 text-[0.9em] text-slate-800"> notes.md</code>.
+              Any extra artifacts (PDFs, code experiments, screenshots,
+              transcripts) live in the same resource folder so the scratchpad
+              for one card stays self-contained.
             </p>
             <pre className="mt-4 overflow-x-auto rounded-lg bg-slate-900 px-4 py-3 text-sm text-slate-100">
               <code>
 {`Project 15 - AI Engineering Study/
-  phase-0-home-port/
-    m01-05.md
-    m06-10.md
-  phase-1-the-library/
-    building-effective-agents.md
-    12-factor-agents.md
-    swe-bench.md
-  phase-2-harbor-of-protocols/
-    mcp-spec.md
-    claude-code-101.md
-    ...`}
+  notes/
+    phase-0-foundation/
+      m01-05/
+        notes.md
+      m06-10/
+        notes.md
+    phase-1-canon/
+      building-effective-agents/
+        notes.md
+        printable-version.pdf
+      12-factor-agents/
+        notes.md
+      swe-bench/
+        notes.md
+        example-trace.json
+    phase-2-mcp/
+      claude-code-101/
+        notes.md
+      ...`}
               </code>
             </pre>
             <p className="mt-3 text-base leading-relaxed text-slate-700">
-              File names are kebab-case. Folders match the seven phases. Each
-              file is freeform: notes, takeaways, questions, code snippets,
-              links back to source. There is no template, on purpose.
+              Folder names are kebab-case and match the resource. The phase
+              folder is the natural Claude Code working directory: open it as
+              the session root and the resource subfolders are one
+              <code className="rounded bg-slate-100 px-1.5 py-0.5 text-[0.9em] text-slate-800"> cd</code> away.
             </p>
           </section>
 
