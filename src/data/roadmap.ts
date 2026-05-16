@@ -199,7 +199,7 @@ export const phases: Phase[] = [
     id: "the-workshop",
     region: "The Workshop",
     blurb:
-      "Open source, fine-tuning, and memory beyond RAG. Hands dirty with open models, browser automation, and memory architectures.",
+      "Open-source agent stacks, browser automation, and memory architectures beyond plain RAG.",
     resources: [
       {
         id: "p3-hf-full",
@@ -214,13 +214,6 @@ export const phases: Phase[] = [
         url: "https://huggingface.co/learn/agents-course/bonus-unit1/introduction",
         source: "Hugging Face",
         est: "4-6h",
-      },
-      {
-        id: "p3-karpathy",
-        title: "Neural Networks: Zero to Hero",
-        url: "https://karpathy.ai/zero-to-hero.html",
-        source: "Andrej Karpathy",
-        est: "20-25h",
       },
       {
         id: "p3-stagehand",

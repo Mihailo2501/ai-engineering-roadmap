@@ -200,9 +200,4 @@ export const glossary: GlossaryEntry[] = [
     phase: 1,
     def: "HumanLayer's adaptation of the 12-Factor App methodology to agent engineering. A pragmatic checklist for building agents that survive production.",
   },
-  {
-    term: "Zero to Hero",
-    phase: 3,
-    def: "Andrej Karpathy's video series building neural networks from scratch. Bedrock for understanding what a transformer actually does under the hood.",
-  },
 ];
